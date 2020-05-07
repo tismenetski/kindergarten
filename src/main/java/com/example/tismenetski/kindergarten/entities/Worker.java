@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class Worker {
+    private static final String MY_TIME_ZONE="Asia/Jerusalem";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,17 +25,17 @@ public class Worker {
     @NotBlank
     private String name;
 
-    @NotBlank
+    @NotNull
     private Integer age;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @NotBlank
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = MY_TIME_ZONE)
+    @NotNull
     private Date birthday;
 
     @NotBlank
     private String sex;
 
-    @NotBlank
+    @NotNull
     private Double hourlyPayment;
 
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, mappedBy = "worker")

@@ -33,7 +33,7 @@ public class Shift {
     private Date endDate;
 
     @ManyToOne
-    @JoinColumn(name = "worker_id",updatable = false, nullable = false)
+    @JoinColumn(name = "worker_id")
     private Worker worker;
 
     @NotBlank
