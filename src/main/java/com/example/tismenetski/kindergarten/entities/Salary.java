@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -20,7 +21,7 @@ public class Salary {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotNull
     @JsonFormat(pattern = "yyyy-mm")
     private Date month;
 
@@ -28,7 +29,7 @@ public class Salary {
     @JoinColumn(name = "worker_id",updatable = false, nullable = false)
     private Worker salaryWorker;
 
-    @NotBlank
+    @NotNull
     private Double amount;
 
 }

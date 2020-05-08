@@ -22,7 +22,6 @@ public class ChildGroup {
 
 
     @NotBlank
-
     private String description;
 
 

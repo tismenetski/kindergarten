@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -22,7 +23,7 @@ public class Child {
     @NotBlank
     private String name;
 
-    @NotBlank
+    @NotNull
     private Double age;
 
     @NotBlank
@@ -34,7 +35,7 @@ public class Child {
     private String parent1Phone;
     private String parent2Phone;
 
-    @NotBlank
+    @NotNull
     private Integer monthlyPayment;
 
     @ManyToOne

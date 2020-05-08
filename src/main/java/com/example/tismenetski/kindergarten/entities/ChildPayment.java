@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -20,11 +21,11 @@ public class ChildPayment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotNull
     @JsonFormat(pattern = "yyyy-mm")
     private Date month;
 
-    @NotBlank
+    @NotNull
     private Integer amount;
 
     @ManyToOne

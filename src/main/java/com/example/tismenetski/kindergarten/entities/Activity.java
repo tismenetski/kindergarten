@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -21,11 +22,11 @@ public class Activity {
     @NotBlank
     private String name;
 
-    @NotBlank
+    @NotNull
     @JsonFormat(pattern = "yyyy-mm-dd hh:mm")
     private Date startDate;
 
-    @NotBlank
+    @NotNull
     @JsonFormat(pattern = "yyyy-mm-dd hh:mm")
     private Date endDate;
 

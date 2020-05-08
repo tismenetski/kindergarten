@@ -43,4 +43,7 @@ public class Worker {
 
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, mappedBy = "salaryWorker")
     private List<Salary> salaries;
+
+
+    private Boolean isActive; // Needed for filtering only active workers for job handling and all workers for past records like salaries and expenses
 }
